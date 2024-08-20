@@ -1,5 +1,5 @@
 package com.example.conta;
 
-public class Tarifavel {
-    
+public interface Tarifavel {
+    void cobrancaDeTarifa();
 }
