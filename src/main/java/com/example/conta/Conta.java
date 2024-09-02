@@ -4,7 +4,7 @@ public abstract class Conta {
     private String numeroConta;
     protected double saldo;
 
-    public Conta(Agencia agencia, String numeroConta, double saldo) {
+    protected Conta(Agencia agencia, String numeroConta, double saldo) {
         this.agencia = agencia;
         this.numeroConta = numeroConta;
         this.saldo = saldo;
