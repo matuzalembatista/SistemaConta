@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Agencia {
-    private String numero;
+    public final String numero;
     private List<Conta> contas = new ArrayList<>();
 
     public Agencia(String numero) {
