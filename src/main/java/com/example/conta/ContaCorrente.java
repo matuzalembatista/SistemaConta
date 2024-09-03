@@ -4,7 +4,7 @@ public class ContaCorrente extends Conta {
 
     private double tarifa = 25.0;
  
-    public ContaCorrente(Agencia agencia, String numeroConta, double saldo) {
+    public ContaCorrente(Agencia agencia, String numeroConta, double saldo, int i) {
         super(agencia, numeroConta, saldo);
     }
  
