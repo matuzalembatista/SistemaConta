@@ -1,9 +1,13 @@
 package com.example.conta;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class App {
+
+    private static final Logger logger = LoggerFactory.getLogger(App.class);
 
 	public static void main(String[] args) {
         Agencia caixaLuizote = new Agencia("0205-08");
@@ -21,13 +25,14 @@ public class App {
             caixaLuizote.saque("1548-7", 500);
 
         } catch (ContaException e) {
-            System.out.println(e.getMessage());
+            logger.error("Erro durante o saque: {}", e.getMessage());
         }
 
         caixaLuizote.cobrancaDeTarifas(); // código para chamar cobrança de tarifas para contas correntes
 
-        System.out.println("Saldo Conta Corrente (" + contaCorrente.getNumeroConta() + "): " + contaCorrente.getSaldo());
-        System.out.println("Saldo Conta Poupança (" + contaPoupanca.getNumeroConta() + "): " + contaPoupanca.getSaldo());
-        System.out.println("Saldo Conta Salário (" + contaSalario.getNumeroConta() + "): " + contaSalario.getSaldo());
+        logger.info("Saldo Conta Corrente ({}): {}", contaCorrente.getNumeroConta(), contaCorrente.getSaldo());
+        logger.info("Saldo Conta Poupança ({}): {}", contaPoupanca.getNumeroConta(), contaPoupanca.getSaldo());
+        logger.info("Saldo Conta Salário ({}): {}", contaSalario.getNumeroConta(), contaSalario.getSaldo());
+
     }
 }
